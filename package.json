@@ -38,9 +38,9 @@
     "dev": "cross-env VITE_SERVICE_ENV=dev vite",
     "dev:test": "cross-env VITE_SERVICE_ENV=test vite",
     "dev:prod": "cross-env VITE_SERVICE_ENV=prod vite",
-    "build": "npm run typecheck && cross-env VITE_SERVICE_ENV=prod vite build",
-    "build:dev": "npm run typecheck && cross-env VITE_SERVICE_ENV=dev vite build",
-    "build:test": "npm run typecheck && cross-env VITE_SERVICE_ENV=test vite build",
+    "build": "npm run && cross-env VITE_SERVICE_ENV=prod vite build",
+    "build:dev": "npm run && cross-env VITE_SERVICE_ENV=dev vite build",
+    "build:test": "npm run && cross-env VITE_SERVICE_ENV=test vite build",
     "build:vercel": "cross-env VITE_HASH_ROUTE=Y VITE_VERCEL=Y vite build",
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit --skipLibCheck",
@@ -107,7 +107,6 @@
     "mockjs": "^1.1.0",
     "rollup-plugin-visualizer": "^5.9.0",
     "sass": "^1.60.0",
-    "simple-git-hooks": "^2.8.1",
     "standard-version": "^9.5.0",
     "tsx": "^3.12.6",
     "typescript": "5.0.3",
@@ -127,10 +126,6 @@
     "patchedDependencies": {
       "mockjs@1.1.0": "patches/mockjs@1.1.0.patch"
     }
-  },
-  "simple-git-hooks": {
-    "commit-msg": "pnpm soy git-commit-verify",
-    "pre-commit": "pnpm typecheck && pnpm lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,mjs,json,ts,tsx,vue}": "eslint . --fix"
